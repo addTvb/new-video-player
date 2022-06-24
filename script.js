@@ -22,7 +22,7 @@ const startStopVideo = () => {
 		playPauseBtn.setAttribute('data-video-state', 'pause');
 	}
 };
-
+   
 playPauseBtn.addEventListener('click', startStopVideo);
 
 video.addEventListener('loadedmetadata', () => {
