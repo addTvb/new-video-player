@@ -21,7 +21,7 @@ const startStopVideo = () => {
 		video.pause();
 		playPauseBtn.setAttribute('data-video-state', 'pause');
 	}
-};
+};    
    
 playPauseBtn.addEventListener('click', startStopVideo);
 
