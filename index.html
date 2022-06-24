@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="./style.css" />
+        <script src="./script.js" defer></script>
 		<title>Custom video player</title>
 	</head>
 	<body>
@@ -16,18 +17,24 @@
 
 			<!-- * Controls -->
 			<div class="controls">
-				<button class="controls__play-pause">Play/pause</button>
-				<button class="controls__stop">Stop</button>
+				<button
+					class="controls__play-pause"
+					id="playPauseBtn"
+					data-video-state="pause"
+				>
+					Play/pause
+				</button>
+				<button class="controls__stop" id="stopBtn">Stop</button>
 
 				<div class="controls__progress">
 					<progress id="progress" value="0" min="0">
-						<span id="progress-bar"></span>
+						<span id="progress-bar" class="progress-bar"></span>
 					</progress>
 				</div>
 
-				<button class="controls__mute">Mute</button>
-				<button class="controls__minus">Minus</button>
-				<button class="controls__plus">Plus</button>
+				<button id="muteBtn" class="controls__mute">Mute</button>
+				<button id="minusBtn" class="controls__minus">Minus</button>
+				<button id="plusBtn" class="controls__plus">Plus</button>
 			</div>
 		</div>
 	</body>

@@ -43,3 +43,8 @@ button:active {
 .controls__plus {
 	background-color: #356bce;
 }
+
+progress {
+	height: 100px;
+}
+
