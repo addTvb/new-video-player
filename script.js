@@ -9,7 +9,7 @@ let minusBtn = document.querySelector('#minusBtn');
 let plusBtn = document.querySelector('#plusBtn');
 // * Progress
 let progress = document.querySelector('#progress');
-let progressBar = document.querySelector('#progressBar');
+let progressBar = document.querySelector('#progress-bar');
 
 const startStopVideo = () => {
 	let videoState = playPauseBtn.getAttribute('data-video-state');
@@ -21,8 +21,8 @@ const startStopVideo = () => {
 		video.pause();
 		playPauseBtn.setAttribute('data-video-state', 'pause');
 	}
-};    
-   
+};
+
 playPauseBtn.addEventListener('click', startStopVideo);
 
 video.addEventListener('loadedmetadata', () => {
@@ -31,7 +31,17 @@ video.addEventListener('loadedmetadata', () => {
 
 video.addEventListener('timeupdate', () => {
 	progress.value = video.currentTime;
-	progressBar.style.width = Math.floor(
-		(video.currentTime / video.duration) * 100 + '%'
-	);
+	progressBar.style.width =
+		Math.floor((video.currentTime / video.duration) * 100) + '%';
+});
+
+progress.addEventListener('click', function (event) {
+	let pos =
+		(event.pageX -
+			(this.offsetLeft +
+				this.offsetParent.offsetLeft +
+				this.offsetParent.offsetLeft)) /
+		this.offsetWidth;
+
+	video.currentTime = pos * video.duration;
 });
