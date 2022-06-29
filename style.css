@@ -18,33 +18,24 @@ body {
 .controls {
 	display: flex;
 	column-gap: 20px;
-	background-color: #eee;
+	background-color: #38b668;
+	padding: 20px;
+	border-radius: 10px;
 }
 button {
-	padding: 0.5rem 1rem;
+	padding: 0.2rem 1rem;
 	font-size: 1.1rem;
 	transition: 0.2s;
+	border-radius: 10px;
+	background-color: #000;
+	color: #646464;
+	border: 1px solid #fff;
 }
 button:active {
 	transform: scale(0.95);
 }
-.controls__play-pause {
-	background-color: #14d114;
-}
-.controls__stop {
-	background-color: #c11515;
-}
-.controls__mute {
-	background-color: #ddd;
-}
-.controls__minus {
-	background-color: #bac913;
-}
-.controls__plus {
-	background-color: #356bce;
-}
 
 progress {
-	height: 100px;
+	height: 50px;
 }
 

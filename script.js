@@ -3,7 +3,6 @@
 let video = document.querySelector('#video');
 // * Buttons
 let playPauseBtn = document.querySelector('#playPauseBtn');
-let stopBtn = document.querySelector('#stopBtn');
 let muteBtn = document.querySelector('#muteBtn');
 let minusBtn = document.querySelector('#minusBtn');
 let plusBtn = document.querySelector('#plusBtn');
@@ -44,4 +43,20 @@ progress.addEventListener('click', function (event) {
 		this.offsetWidth;
 
 	video.currentTime = pos * video.duration;
+});
+
+muteBtn.addEventListener('click', () => (video.muted = !video.muted));
+
+minusBtn.addEventListener('click', () => {
+	let currentVolume = Math.floor(video.volume * 10) / 10;
+	if (currentVolume > 0) video.volume -= 0.1;
+
+	if (currentVolume <= 0) video.muted = true;
+	else video.muted = false;
+});
+
+plusBtn.addEventListener('click', () => {
+	let currentVolume = Math.floor(video.volume * 10) / 10;
+	if (video.muted) video.muted = false;
+	if (currentVolume < 1) video.volume += 0.1;
 });
